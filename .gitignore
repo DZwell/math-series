@@ -62,7 +62,7 @@ target/
 .ipynb_checkpoints
 
 #Virtualenv
-bin
-lib
-include
+bin/
+lib/
+include/
 pip-selfcheck.json

@@ -1,8 +1,7 @@
-import pytest
 
 
 def fibonacci(n):
-    """Return the nth number of the fibonacci series."""
+    """Return the nth number of the fibonacci series using recursion."""
     if n == 0:
         return 0
     if n == 1 or n == 2:
@@ -11,7 +10,7 @@ def fibonacci(n):
 
 
 def lucas(n):
-    """Return the nth number of the lucas series."""
+    """Return the nth number of the lucas series using recursion."""
     if n == 0:
         return 2
     if n == 1:
@@ -20,11 +19,61 @@ def lucas(n):
 
 
 def sum_series(n, a=0, b=1):
-    """Return the nth number of either the fibonacci or the lucas series."""
-    if a == 0 and b == 1:
-        return fibonacci(n)
-    if a == 2 and b == 1:
-        return lucas(n)
+    """Return the nth number of either the fibonacci or the lucas series using recursion."""
+    if n == 0:
+        return a
+    if n == 1:
+        return b
+    print(a, b)
+    return sum_series(n - 1, a, b) + sum_series(n - 2, a, b)
+
+
+def fibonacci_i(n):
+    """Return the nth number of the fibonacci series using iteration."""
+    x = 0
+    y = 1
+    if n == 0:
+        return 0
+    if n == 1 or n == 2:
+        return 1
+    while n >= 2:
+        num = x + y
+        x = y
+        y = num
+        n -= 1
+    return num
+
+
+def lucas_i(n):
+    """Return the nth number of the lucas series using iteration."""
+    x = 2
+    y = 1
+    if n == 0:
+        return 2
+    if n == 1:
+        return 1
+    while n >= 2:
+        num = x + y
+        x = y
+        y = num
+        n -= 1
+    return num
+
+
+def sum_series_i(n, a=0, b=1):
+    """Return nth number of a mathematical series."""
+    x = a
+    y = b
+    if n == 0:
+        return a
+    if n == 1:
+        return b
+    while n >= 2:
+        num = x + y
+        x = y
+        y = num
+        n -= 1
+    return num
 
 
 if __name__ == '__main__':

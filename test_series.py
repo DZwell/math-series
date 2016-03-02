@@ -63,6 +63,7 @@ SUM_TABLE = [
 def test_fibonacci(n, result):
     """Assert nth number in fibonacci series."""
     from series import fibonacci
+    assert type(n) == int
     assert fibonacci(n) == result
 
 
@@ -70,6 +71,7 @@ def test_fibonacci(n, result):
 def test_lucas(n, result):
     """Assert nth number in lucas series."""
     from series import lucas
+    assert type(n) == int
     assert lucas(n) == result
 
 

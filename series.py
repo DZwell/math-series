@@ -4,7 +4,7 @@ def fibonacci(n):
     """Return the nth number of the fibonacci series using recursion."""
     if n == 0:
         return 0
-    if n == 1 or n == 2:
+    elif n == 1 or n == 2:
         return 1
     return fibonacci(n - 1) + fibonacci(n - 2)
 
@@ -13,16 +13,16 @@ def lucas(n):
     """Return the nth number of the lucas series using recursion."""
     if n == 0:
         return 2
-    if n == 1:
+    elif n == 1:
         return 1
     return lucas(n - 1) + lucas(n - 2)
 
 
 def sum_series(n, a=0, b=1):
-    """Return the nth number of either the fibonacci or the lucas series using recursion."""
+    """Return the nth number of either the fibonacci or the lucas series recursively."""
     if n == 0:
         return a
-    if n == 1:
+    elif n == 1:
         return b
     print(a, b)
     return sum_series(n - 1, a, b) + sum_series(n - 2, a, b)
@@ -34,7 +34,7 @@ def fibonacci_i(n):
     y = 1
     if n == 0:
         return 0
-    if n == 1 or n == 2:
+    elif n == 1 or n == 2:
         return 1
     while n >= 2:
         num = x + y
@@ -50,7 +50,7 @@ def lucas_i(n):
     y = 1
     if n == 0:
         return 2
-    if n == 1:
+    elif n == 1:
         return 1
     while n >= 2:
         num = x + y
@@ -66,7 +66,7 @@ def sum_series_i(n, a=0, b=1):
     y = b
     if n == 0:
         return a
-    if n == 1:
+    elif n == 1:
         return b
     while n >= 2:
         num = x + y
